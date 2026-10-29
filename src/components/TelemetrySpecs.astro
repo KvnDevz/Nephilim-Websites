@@ -1,0 +1,156 @@
+---
+---
+
+<section id="architecture" class="scroll-mt-12 w-full border-b border-[#222222] bg-[#141414]">
+  <div class="mx-auto max-w-[1360px] border-x border-[#222222]">
+    <!-- Architectural Section Header Row (Split 5 / 7, No Eyebrow Kicker) -->
+    <div class="grid grid-cols-1 lg:grid-cols-12 border-b border-[#222222] bg-[#111111]">
+      <div class="lg:col-span-5 border-b lg:border-b-0 lg:border-r border-[#222222] p-6 sm:p-10">
+        <h2 class="text-[clamp(1.65rem,2.8vw,2.4rem)] font-bold tracking-[-0.03em] text-[#f0efeb] leading-[1.1] [text-wrap:balance]">
+          Ring-0 packet governance without the legacy bloat.
+        </h2>
+      </div>
+      <div class="lg:col-span-7 flex items-center p-6 sm:p-10">
+        <p class="max-w-[64ch] text-[14.5px] leading-[1.65] text-[#c8c6c1]">
+          AirCut bypasses user-space socket proxies and bloated background services. By binding directly to{" "}
+          <code class="num text-[#88c0d0]">wpcap.dll</code> and <code class="num text-[#88c0d0]">packet.dll</code>{" "}
+          from a compiled Rust core, every Layer-2 Ethernet frame is forged, queued, and dispatched in under 12 microseconds.
+        </p>
+      </div>
+    </div>
+
+    <!-- Row 1: Asymmetric 7 / 5 Engineering Deep-Dive Cells -->
+    <div class="grid grid-cols-1 lg:grid-cols-12 border-b border-[#222222]">
+      <!-- Cell A: Direct WinPcap 4.1.3 FFI Pipeline (7 cols) -->
+      <div class="lg:col-span-7 flex flex-col justify-between border-b lg:border-b-0 lg:border-r border-[#222222] bg-[#141414] p-6 sm:p-10">
+        <div>
+          <h3 class="text-[19px] font-bold tracking-[-0.02em] text-[#f0efeb]">
+            Direct WinPcap 4.1.3 NPF Kernel Ring Binding
+          </h3>
+          <p class="mt-2.5 max-w-[60ch] text-[13.5px] leading-[1.6] text-[#8e8c87]">
+            Raw 42-byte ARP frames are constructed in stack-allocated Rust structs and written straight to the NPF driver ring buffer via{" "}
+            <code class="num text-[#c8c6c1]">pcap_sendpacket</code>, eliminating heap fragmentation and context-switch stalls.
+          </p>
+        </div>
+
+        <!-- Concrete Architecture Pipeline Diagram (Inline SVG + Tabular Readouts) -->
+        <div class="mt-8 border border-[#222222] bg-[#0c0c0c] p-4">
+          <div class="grid grid-cols-1 sm:grid-cols-3 divide-y sm:divide-y-0 sm:divide-x divide-[#222222] text-[11.5px]">
+            <div class=" pb-3 sm:pb-0 sm:pr-4">
+              <div class="num text-[10px] text-[#8e8c87]">STAGE 01 · RUST CORE</div>
+              <div class="mt-1 font-bold text-[#f0efeb]">#[repr(C, packed)]</div>
+              <div class="num mt-1 text-[11px] text-[#a3be8c]">Zero-copy 42B struct</div>
+            </div>
+            <div class="py-3 sm:py-0 sm:px-4">
+              <div class="num text-[10px] text-[#8e8c87]">STAGE 02 · C-ABI FFI</div>
+              <div class="mt-1 font-bold text-[#f0efeb]">wpcap.dll / packet.dll</div>
+              <div class="num mt-1 text-[11px] text-[#88c0d0]">pcap_sendpacket()</div>
+            </div>
+            <div class="pt-3 sm:pt-0 sm:pl-4">
+              <div class="num text-[10px] text-[#8e8c87]">STAGE 03 · NDIS WIRE</div>
+              <div class="mt-1 font-bold text-[#f0efeb]">NPF Ring-0 Buffer</div>
+              <div class="num mt-1 text-[11px] text-[#ebcb8b]">&lt; 12 µs Wire Dispatch</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Cell B: Strict 412px Zero-Shift Control Geometry (5 cols) -->
+      <div class="lg:col-span-5 flex flex-col justify-between bg-[#111111] p-6 sm:p-10">
+        <div>
+          <h3 class="text-[19px] font-bold tracking-[-0.02em] text-[#f0efeb]">
+            Deterministic 412px Control Geometry
+          </h3>
+          <p class="mt-2.5 text-[13.5px] leading-[1.6] text-[#8e8c87]">
+            Legacy network tools mount and unmount buttons dynamically during background polls, causing accidental clicks. AirCut locks every row to an immutable <code class="num text-[#f0efeb]">248px + 72px + 76px</code> grid track.
+          </p>
+        </div>
+
+        <!-- Blueprint Dimension Callout -->
+        <div class="mt-8 border border-[#222222] bg-[#0c0c0c] p-4 font-mono text-[11px]">
+          <div class="flex items-center justify-between text-[#8e8c87] mb-2">
+            <span>TOTAL FIXED TRACK WIDTH</span>
+            <span class="num text-[#a3be8c] font-bold">412px (0px CLS)</span>
+          </div>
+          <div class="grid grid-cols-[1fr_72px_76px] gap-1.5 text-center">
+            <div class="border border-[#88c0d0]/40 bg-[#88c0d0]/10 py-2 text-[#88c0d0]">
+              <div class="font-bold">248px</div>
+              <div class="text-[9.5px] opacity-80">SHAPER POD</div>
+            </div>
+            <div class="border border-[#b48ead]/40 bg-[#b48ead]/10 py-2 text-[#b48ead]">
+              <div class="font-bold">72px</div>
+              <div class="text-[9.5px] opacity-80">LAG</div>
+            </div>
+            <div class="border border-[#e06c75]/40 bg-[#e06c75]/10 py-2 text-[#e06c75]">
+              <div class="font-bold">76px</div>
+              <div class="text-[9.5px] opacity-80">CUT</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Row 2: 4-Column Hairline Technical Specification Ledger -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 divide-y sm:divide-y-0 sm:divide-x divide-[#222222] bg-[#141414]">
+      <div class="p-6 sm:p-8 flex flex-col justify-between">
+        <div>
+          <h3 class="text-[15.5px] font-bold text-[#f0efeb]">
+            Optimistic State Hold Cache
+          </h3>
+          <p class="mt-2 text-[12.5px] leading-[1.6] text-[#8e8c87]">
+            User slider drags write immediately to a local optimistic overlay that suppresses background 900ms ARP poll overwrites for a full 1,600ms window.
+          </p>
+        </div>
+        <div class="mt-6 pt-4 border-t border-[#222222] flex items-baseline justify-between">
+          <span class="text-[11px] text-[#8e8c87]">Hold Window</span>
+          <span class="num text-[14px] font-bold text-[#ebcb8b]">1,600 ms</span>
+        </div>
+      </div>
+
+      <div class="p-6 sm:p-8 flex flex-col justify-between">
+        <div>
+          <h3 class="text-[15.5px] font-bold text-[#f0efeb]">
+            Autonomous ARP Defender
+          </h3>
+          <p class="mt-2 text-[12.5px] leading-[1.6] text-[#8e8c87]">
+            Monitors the Windows IP Helper neighbour table (<code class="num text-[#c8c6c1]">SetIpNetEntry2</code>) and pins the gateway's burned-in MAC address against rival spoofers.
+          </p>
+        </div>
+        <div class="mt-6 pt-4 border-t border-[#222222] flex items-baseline justify-between">
+          <span class="text-[11px] text-[#8e8c87]">Re-Assertion</span>
+          <span class="num text-[14px] font-bold text-[#a3be8c]">Gratuitous L2</span>
+        </div>
+      </div>
+
+      <div class="p-6 sm:p-8 flex flex-col justify-between">
+        <div>
+          <h3 class="text-[15.5px] font-bold text-[#f0efeb]">
+            Asymmetric Delay Queue
+          </h3>
+          <p class="mt-2 text-[12.5px] leading-[1.6] text-[#8e8c87]">
+            Inject deterministic millisecond latency (<code class="num text-[#c8c6c1]">0–5,000 ms</code>) independently on RX and TX flows to audit game netcode and jitter buffers.
+          </p>
+        </div>
+        <div class="mt-6 pt-4 border-t border-[#222222] flex items-baseline justify-between">
+          <span class="text-[11px] text-[#8e8c87]">Delay Range</span>
+          <span class="num text-[14px] font-bold text-[#b48ead]">0 – 5,000 ms</span>
+        </div>
+      </div>
+
+      <div class="p-6 sm:p-8 flex flex-col justify-between">
+        <div>
+          <h3 class="text-[15.5px] font-bold text-[#f0efeb]">
+            Offline IEEE OUI Lookup
+          </h3>
+          <p class="mt-2 text-[12.5px] leading-[1.6] text-[#8e8c87]">
+            Resolves hardware manufacturers instantaneously from an embedded binary prefix table—zero external DNS or cloud API leakage.
+          </p>
+        </div>
+        <div class="mt-6 pt-4 border-t border-[#222222] flex items-baseline justify-between">
+          <span class="text-[11px] text-[#8e8c87]">Compiled DB</span>
+          <span class="num text-[14px] font-bold text-[#d08770]">35,420 OUIs</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

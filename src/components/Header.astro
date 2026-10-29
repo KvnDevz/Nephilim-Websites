@@ -1,0 +1,83 @@
+---
+import { Download } from "lucide-react";
+---
+
+<header class="sticky top-0 z-50 w-full border-b border-[#222222] bg-[#111111]/95 backdrop-blur-md">
+  <div class="mx-auto flex h-12 max-w-[1360px] items-stretch justify-between border-x border-[#222222]">
+    <!-- Left: Brand Identity Cell -->
+    <div class="flex items-center gap-3 border-r border-[#222222] px-4 md:px-6">
+      <a href="/" class="flex items-center gap-2.5 group">
+        <div class="grid h-6 w-6 place-items-center bg-[#181818] border border-[#2a2a2a] transition-colors group-hover:border-[#a3be8c]">
+          <svg width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+            <rect x="1.5" y="2.5" width="5" height="3" fill="#88c0d0" />
+            <rect x="9.5" y="2.5" width="5" height="3" fill="#88c0d0" />
+            <rect x="1.5" y="10.5" width="5" height="3" fill="#a3be8c" />
+            <rect x="9.5" y="10.5" width="5" height="3" fill="#a3be8c" />
+            <path d="M8 1.5v13" stroke="#e06c75" stroke-width="1.6" />
+          </svg>
+        </div>
+        <span class="text-[14px] font-bold tracking-tight text-[#f0efeb]">AirCut</span>
+        <span class="num border border-[#2a2a2a] bg-[#181818] px-1.5 py-0.5 text-[10px] font-medium text-[#8e8c87]">
+          v1.0.0
+        </span>
+      </a>
+    </div>
+
+    <!-- Center-Left: Hardware Driver Telemetry Cell -->
+    <div class="hidden xl:flex items-center gap-2.5 border-r border-[#222222] px-5 text-[11px] text-[#8e8c87]">
+      <span class="h-1.5 w-1.5 bg-[#a3be8c]"></span>
+      <span class="num">RING-0 NPF · WINPCAP 4.1.3 ABI</span>
+      <span class="text-[#3a3a3a]">/</span>
+      <span class="num text-[#c8c6c1]">0px CLS</span>
+    </div>
+
+    <!-- Center: Architectural Navigation Spine -->
+    <nav aria-label="Primary" class="hidden md:flex flex-1 items-stretch text-[12px] font-medium text-[#8e8c87]">
+      <a
+        href="#workbench"
+        class="flex items-center border-r border-[#222222] px-5 transition-colors hover:bg-[#181818] hover:text-[#f0efeb]"
+      >
+        Workbench
+      </a>
+      <a
+        href="#architecture"
+        class="flex items-center border-r border-[#222222] px-5 transition-colors hover:bg-[#181818] hover:text-[#f0efeb]"
+      >
+        Architecture
+      </a>
+      <a
+        href="#anatomy"
+        class="flex items-center border-r border-[#222222] px-5 transition-colors hover:bg-[#181818] hover:text-[#f0efeb]"
+      >
+        42B Frame Dissector
+      </a>
+      <a
+        href="#benchmark"
+        class="flex items-center border-r border-[#222222] px-5 transition-colors hover:bg-[#181818] hover:text-[#f0efeb]"
+      >
+        Benchmarks
+      </a>
+      <a
+        href="#downloads"
+        class="flex items-center border-r border-[#222222] px-5 transition-colors hover:bg-[#181818] hover:text-[#f0efeb]"
+      >
+        Binaries
+      </a>
+    </nav>
+
+    <!-- Right: Direct Binary Dispatch Cell -->
+    <div class="flex items-center shrink-0">
+      <a
+        href="/downloads/AirCut_1.0.0_x64-setup.exe"
+        download="AirCut_1.0.0_x64-setup.exe"
+        class="flex h-full items-center gap-2 bg-[#a3be8c] px-3.5 md:px-6 text-[12px] font-bold text-[#0c0c0c] transition-colors hover:bg-[#b5cea0]"
+      >
+        <Download size={14} className="stroke-[2.4] shrink-0" />
+        <span>Download Setup</span>
+        <span class="num hidden sm:inline border-l border-[#0c0c0c]/25 pl-2 text-[10.5px] font-semibold">
+          1.92 MB
+        </span>
+      </a>
+    </div>
+  </div>
+</header>

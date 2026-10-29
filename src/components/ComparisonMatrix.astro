@@ -1,0 +1,109 @@
+---
+import { Check } from "lucide-react";
+
+const COMPARISONS = [
+  {
+    feature: "Binary Installer Footprint",
+    aircut: "1.92 MB (NSIS Compiled)",
+    legacy: "35+ MB (Bundled Services)",
+    cli: "1.2+ GB (WSL / VM Image)",
+  },
+  {
+    feature: "Zero Layout Shift (CLS)",
+    aircut: "0 px (Strict 412px Track)",
+    legacy: "Constant UI Button Jitter",
+    cli: "N/A (Terminal Only)",
+  },
+  {
+    feature: "Optimistic State Hold Cache",
+    aircut: "1,600 ms Hold Window",
+    legacy: "Poll Overwrites Active Drag",
+    cli: "Manual Command Re-entry",
+  },
+  {
+    feature: "Idle Resident Memory (RAM)",
+    aircut: "~28 MB (Native Rust Core)",
+    legacy: "140 – 220 MB",
+    cli: "600+ MB (Hypervisor Overhead)",
+  },
+  {
+    feature: "Third-Party Ads & Telemetry",
+    aircut: "0% (Zero Network Callbacks)",
+    legacy: "Adware & Webview Banners",
+    cli: "Clean (Manual Config)",
+  },
+  {
+    feature: "Asymmetric Delay Injection",
+    aircut: "Independent RX/TX (0–5,000 ms)",
+    legacy: "Unavailable",
+    cli: "Manual tc / netem Rules",
+  },
+  {
+    feature: "Offline IEEE OUI Database",
+    aircut: "35,420 Embedded Prefixes",
+    legacy: "Slow Cloud API Lookups",
+    cli: "External oui.txt Parsing",
+  },
+  {
+    feature: "Autonomous ARP Defender",
+    aircut: "Native SetIpNetEntry2 Guard",
+    legacy: "Basic Spoof Alert",
+    cli: "Static netsh Neighbour Pin",
+  },
+];
+---
+
+<section id="benchmark" class="scroll-mt-12 w-full border-b border-[#222222] bg-[#141414]">
+  <div class="mx-auto max-w-[1360px] border-x border-[#222222]">
+    <!-- Section Header Row (Split 5 / 7, Zero Eyebrow Kicker) -->
+    <div class="grid grid-cols-1 lg:grid-cols-12 border-b border-[#222222] bg-[#111111]">
+      <div class="lg:col-span-5 border-b lg:border-b-0 lg:border-r border-[#222222] p-6 sm:p-10">
+        <h2 class="text-[clamp(1.65rem,2.8vw,2.4rem)] font-bold tracking-[-0.03em] text-[#f0efeb] leading-[1.1] [text-wrap:balance]">
+          Engineering Benchmark Matrix.
+        </h2>
+      </div>
+      <div class="lg:col-span-7 flex items-center p-6 sm:p-10">
+        <p class="max-w-[64ch] text-[14.5px] leading-[1.65] text-[#c8c6c1]">
+          Side-by-side architectural comparison between AirCut's native Rust + Tauri v2 engine, legacy ad-supported utilities, and virtualized command-line toolchains on Windows 10/11 x64.
+        </p>
+      </div>
+    </div>
+
+    <!-- Flush Hairline Comparison Ledger -->
+    <div class="overflow-x-auto bg-[#141414]">
+      <table class="w-full text-left text-[13px] border-collapse">
+        <thead>
+          <tr class="border-b border-[#222222] bg-[#0c0c0c] text-[11px] font-semibold text-[#8e8c87]">
+            <th class="py-4 px-6 border-r border-[#222222]">ARCHITECTURAL DIMENSION</th>
+            <th class="py-4 px-6 border-r border-[#222222] text-[#a3be8c] font-bold">
+              AIRCUT v1.0.0 (RUST + TAURI V2)
+            </th>
+            <th class="py-4 px-6 border-r border-[#222222]">LEGACY NETCUT UTILITY</th>
+            <th class="py-4 px-6">CLI / VM SUITE (ETTERCAP)</th>
+          </tr>
+        </thead>
+        <tbody class="divide-y divide-[#222222]">
+          {
+            COMPARISONS.map((row) => (
+              <tr class="transition-colors hover:bg-[#181818]">
+                <td class="py-3.5 px-6 border-r border-[#222222] font-semibold text-[#f0efeb]">
+                  {row.feature}
+                </td>
+                <td class="py-3.5 px-6 border-r border-[#222222] bg-[#a3be8c]/[0.04] font-semibold text-[#a3be8c]">
+                  <div class="flex items-center gap-2">
+                    <Check size={14} className="shrink-0 text-[#a3be8c]" />
+                    <span class="num text-[12px]">{row.aircut}</span>
+                  </div>
+                </td>
+                <td class="py-3.5 px-6 border-r border-[#222222] text-[#c8c6c1]">
+                  {row.legacy}
+                </td>
+                <td class="py-3.5 px-6 text-[#8e8c87]">{row.cli}</td>
+              </tr>
+            ))
+          }
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>

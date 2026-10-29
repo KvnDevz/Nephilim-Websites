@@ -1,0 +1,23 @@
+---
+import { PacketInspector } from "./islands/PacketInspector";
+---
+
+<section id="anatomy" class="scroll-mt-12 w-full border-b border-[#222222] bg-[#141414]">
+  <div class="mx-auto max-w-[1360px] border-x border-[#222222]">
+    <!-- Section Header Row (Split 5 / 7, Zero Eyebrow Kicker) -->
+    <div class="grid grid-cols-1 lg:grid-cols-12 border-b border-[#222222] bg-[#111111]">
+      <div class="lg:col-span-5 border-b lg:border-b-0 lg:border-r border-[#222222] p-6 sm:p-10">
+        <h2 class="text-[clamp(1.65rem,2.8vw,2.4rem)] font-bold tracking-[-0.03em] text-[#f0efeb] leading-[1.1] [text-wrap:balance]">
+          42-Octet Ethernet & ARP Frame Dissector.
+        </h2>
+      </div>
+      <div class="lg:col-span-7 flex items-center p-6 sm:p-10">
+        <p class="max-w-[64ch] text-[14.5px] leading-[1.65] text-[#c8c6c1]">
+          Inspect the exact byte layout emitted by AirCut's Rust packet engine. Hover any protocol segment below to cross-highlight its raw wire hex octets and <code class="num text-[#a3be8c]">#[repr(C, packed)]</code> struct offsets in real time.
+        </p>
+      </div>
+    </div>
+
+    <PacketInspector client:visible />
+  </div>
+</section>

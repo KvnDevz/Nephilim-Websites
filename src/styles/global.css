@@ -1,0 +1,157 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@property --scan-pos {
+  syntax: "<percentage>";
+  initial-value: 0%;
+  inherits: false;
+}
+
+@layer base {
+  :root {
+    color-scheme: dark;
+
+    /* Matte Pastel Black Palette (Zero Blue Cast — Warm Neutral Carbon) */
+    --bg-well: #0c0c0c;
+    --bg-dock: #111111;
+    --bg-canvas: #141414;
+    --bg-recessed: #181818;
+    --bg-surface-subtle: #1c1c1c;
+    --bg-surface-elevated: #222222;
+    --bg-surface-active: #282828;
+    --bg-selection: #303030;
+
+    /* 1px Swiss Grid Hairlines */
+    --border-structural: #222222;
+    --border-subtle: #2a2a2a;
+    --border-active: #3a3a3a;
+
+    /* Warm Chalk & Stone Foregrounds (WCAG AA/AAA Verified) */
+    --fg-bright: #f0efeb;
+    --fg-primary: #c8c6c1;
+    --fg-secondary: #8e8c87;
+    --fg-muted: #6e6c68;
+
+    /* Muted Pastel Technical Accents */
+    --accent-sky: #88c0d0;
+    --accent-teal: #8fbcbb;
+    --accent-sage: #a3be8c;
+    --accent-sand: #ebcb8b;
+    --accent-peach: #d08770;
+    --accent-coral: #e06c75;
+    --accent-lavender: #b48ead;
+  }
+
+  * {
+    box-sizing: border-box;
+    border-color: var(--border-structural);
+  }
+
+  html {
+    scroll-behavior: smooth;
+    background-color: var(--bg-canvas);
+    color: var(--fg-primary);
+    font-family: "Schibsted Grotesk", system-ui, -apple-system, sans-serif;
+    font-size: 14px;
+    line-height: 1.5;
+    caret-color: var(--accent-sage);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+  }
+
+  body {
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    background-color: var(--bg-canvas);
+    color: var(--fg-primary);
+    overflow-x: hidden;
+  }
+
+  ::selection {
+    background: rgba(163, 190, 140, 0.24);
+    color: var(--fg-bright);
+  }
+
+  :focus-visible {
+    outline: 1px solid var(--accent-sage);
+    outline-offset: 2px;
+  }
+
+  a {
+    text-underline-offset: 4px;
+    text-decoration-thickness: 1px;
+  }
+
+  /* Custom Hardware Scrollbar */
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: var(--bg-well);
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: #2a2a2a;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: #3a3a3a;
+  }
+}
+
+/* Tabular Monospace Utilities */
+.num {
+  font-family: "Martian Mono", Consolas, monospace;
+  font-variant-numeric: tabular-nums;
+  font-feature-settings: "tnum" 1, "zero" 1;
+}
+
+/* Subtle Architectural Dot Matrix */
+.bg-dot-matrix {
+  background-image: radial-gradient(rgba(240, 239, 235, 0.07) 1px, transparent 1px);
+  background-size: 16px 16px;
+}
+
+/* Precision Hardware Slider for Zero-Shift Workbench */
+input[type="range"].sim-slider {
+  -webkit-appearance: none;
+  appearance: none;
+  height: 4px;
+  border-radius: 0px;
+  background: linear-gradient(
+    to right,
+    var(--track-fill, var(--accent-sky)) 0%,
+    var(--track-fill, var(--accent-sky)) var(--track-pct, 100%),
+    var(--bg-well) var(--track-pct, 100%),
+    var(--bg-well) 100%
+  );
+  outline: none;
+  cursor: ew-resize;
+}
+
+input[type="range"].sim-slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 10px;
+  height: 14px;
+  border-radius: 1px;
+  background: var(--fg-bright);
+  border: 1px solid var(--bg-well);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.65);
+  transition: transform 120ms cubic-bezier(0.22, 1, 0.36, 1), background-color 120ms ease;
+}
+
+input[type="range"].sim-slider:hover::-webkit-slider-thumb {
+  background: #ffffff;
+  transform: scaleY(1.12);
+}
+
+input[type="range"].sim-slider:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
