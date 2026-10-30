@@ -39,14 +39,14 @@ const MODE_CONFIGS: Record<
     opcodeDesc: "0x0002 (ARP Reply)",
     dstMacLabel: "A4:83:E7:33:91:FA (Target Host)",
     dstMacHex: ["a4", "83", "e7", "33", "91", "fa"],
-    srcMacLabel: "D8:5E:D3:21:B0:9C (AirCut Relay)",
+    srcMacLabel: "D8:5E:D3:21:B0:9C (Nephilim Relay)",
     srcMacHex: ["d8", "5e", "d3", "21", "b0", "9c"],
     spaLabel: "192.168.1.1 (Gateway VIP)",
     spaHex: ["c0", "a8", "01", "01"],
     tpaLabel: "192.168.1.108 (Target Host)",
     tpaHex: ["c0", "a8", "01", "6c"],
     summary:
-      "Steers target traffic through AirCut's microsecond token-bucket relay queue, pacing Ethernet frames to match the user-selected percentage without dropping TCP sessions.",
+      "Steers target traffic through Nephilim's microsecond token-bucket relay queue, pacing Ethernet frames to match the user-selected percentage without dropping TCP sessions.",
   },
   defend: {
     label: "ARP Defender Pinning",

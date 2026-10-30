@@ -1,8 +1,8 @@
-# AirCut Web — Product Context
+# Nephilim Web — Product Context
 
 ## Identity & Mission
-AirCut is a modern, high-precision network packet shaping, ARP inspection, and LAN governance desktop tool built for network engineers, security auditors, and system administrators.
-The website (`aircut-websites`) is the official download and technical showcase landing page for AirCut v1.0.
+Nephilim is a modern, high-precision network packet shaping, ARP inspection, and LAN governance desktop tool built for network engineers, security auditors, and system administrators.
+The website (`nephilim-websites`) is the official download and technical showcase landing page for Nephilim v1.0.
 
 ## Target Audience
 - Network engineers and systems administrators managing local networks.
@@ -19,8 +19,8 @@ The website (`aircut-websites`) is the official download and technical showcase 
 - **Atmosphere & Tone:** Deep midnight obsidian (`#0f1219` / `#0d1017`) with authentic One Dark Pro semantic accents. Raw, precise network engineering feel (hex MACs, CIDR notations, packet delta counters, live telemetry simulator).
 - **Typography:** Schibsted Grotesk for crisp, authoritative headlines; Martian Mono for tabular data, MAC addresses, and packet inspection.
 - **Interactive UI Islands (React 18):**
-  1. **Live Interactive Engine Preview:** An authentic, fully interactive simulator of AirCut's desktop interface directly in the browser (users can drag sliders, toggle lag, trigger cuts, observe live simulated packet rates and zero-shift layout).
-  2. **Direct Download Hub & Architecture Selector:** Instant access to `AirCut_1.0.0_x64-setup.exe` (1.92 MB), checksums (SHA-256), release notes, WinPcap 4.1.3 prerequisites, and portable binaries.
+  1. **Live Interactive Engine Preview:** An authentic, fully interactive simulator of Nephilim's desktop interface directly in the browser (users can drag sliders, toggle lag, trigger cuts, observe live simulated packet rates and zero-shift layout).
+  2. **Direct Download Hub & Architecture Selector:** Instant access to `Nephilim_1.0.0_x64-setup.exe` (1.92 MB), checksums (SHA-256), release notes, WinPcap 4.1.3 prerequisites, and portable binaries.
   3. **Live Packet Anatomy & Telemetry Explorer:** Visual interactive dissection of ARP request/reply frames, L2 ethernet headers, and throttling mechanics.
-  4. **Benchmark & Comparison Matrix:** AirCut vs legacy tools (NetCut legacy, clunky CLI tools, heavy virtual machines).
+  4. **Benchmark & Comparison Matrix:** Nephilim vs legacy tools (NetCut legacy, clunky CLI tools, heavy virtual machines).
 - **Motion:** Native Web APIs (`requestAnimationFrame`, `IntersectionObserver`, CSS Keyframes, GPU transforms) — silky smooth 60fps with zero runtime lag.

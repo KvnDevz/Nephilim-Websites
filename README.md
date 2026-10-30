@@ -1,6 +1,6 @@
-# AirCut Official Website & Download Portal
+# Nephilim Official Website & Download Portal
 
-Landing page, live 60fps L2 packet oscilloscope, and interactive zero-shift workbench for **AirCut** — Deterministic LAN Traffic Shaper & ARP Governance Desktop Engine.
+Landing page, live 60fps L2 packet oscilloscope, and interactive zero-shift workbench for **Nephilim** — Deterministic LAN Traffic Shaper & ARP Governance Desktop Engine.
 
 ## Stack & Architecture
 - **Framework:** Astro 5 (Static Site Generation + Islands Architecture)
@@ -28,5 +28,5 @@ npm run preview
 
 ## Binary Distribution
 Compiled production binaries are hosted directly in `public/downloads/`:
-- `AirCut_1.0.0_x64-setup.exe` (`1.92 MB` NSIS installer — SHA-256: `7128D7CCAF596DF28D2E57E63A0D076CC478ABC78AD8A3C05FB0DA21839EF2B4`)
-- `AirCut_1.0.0_portable.exe` (`7.10 MB` standalone executable — SHA-256: `290D2BBA1CBD33AE4C2879B0ADBA703DE2B6BD0336E38BF41595A52447ED09B1`)
+- `Nephilim_1.0.0_x64-setup.exe` (`1.92 MB` NSIS installer — SHA-256: `7128D7CCAF596DF28D2E57E63A0D076CC478ABC78AD8A3C05FB0DA21839EF2B4`)
+- `Nephilim_1.0.0_portable.exe` (`7.10 MB` standalone executable — SHA-256: `290D2BBA1CBD33AE4C2879B0ADBA703DE2B6BD0336E38BF41595A52447ED09B1`)

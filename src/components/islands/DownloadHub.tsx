@@ -10,9 +10,9 @@ import {
 const PACKAGES = [
   {
     id: "nsis",
-    name: "AirCut Setup (NSIS Desktop Installer)",
-    filename: "AirCut_1.0.0_x64-setup.exe",
-    url: "/downloads/AirCut_1.0.0_x64-setup.exe",
+    name: "Nephilim Setup (NSIS Desktop Installer)",
+    filename: "Nephilim_1.0.0_x64-setup.exe",
+    url: "/downloads/Nephilim_1.0.0_x64-setup.exe",
     size: "1.92 MB",
     bytes: "2,014,451 bytes",
     arch: "Windows 10 / 11 (x86_64)",
@@ -22,9 +22,9 @@ const PACKAGES = [
   },
   {
     id: "portable",
-    name: "AirCut Portable (Standalone Executable)",
-    filename: "AirCut_1.0.0_portable.exe",
-    url: "/downloads/AirCut_1.0.0_portable.exe",
+    name: "Nephilim Portable (Standalone Executable)",
+    filename: "Nephilim_1.0.0_portable.exe",
+    url: "/downloads/Nephilim_1.0.0_portable.exe",
     size: "7.10 MB",
     bytes: "7,443,456 bytes",
     arch: "Windows 10 / 11 (x86_64)",
@@ -157,7 +157,7 @@ export function DownloadHub() {
                 Kernel Driver Prerequisite: WinPcap 4.1.3
               </h3>
               <p className="mt-2 text-[13px] leading-[1.6] text-[#c8c6c1]">
-                AirCut communicates directly with the NPF packet driver via{" "}
+                Nephilim communicates directly with the NPF packet driver via{" "}
                 <code className="num text-[#88c0d0]">wpcap.dll</code> and{" "}
                 <code className="num text-[#88c0d0]">packet.dll</code>. Ensure{" "}
                 <strong className="text-[#f0efeb]">WinPcap 4.1.3</strong> is installed prior to launching the engine.
@@ -187,7 +187,7 @@ export function DownloadHub() {
                   onClick={() =>
                     copyText(
                       "ps-cmd",
-                      "Get-FileHash .\\AirCut_1.0.0_x64-setup.exe -Algorithm SHA256",
+                      "Get-FileHash .\\Nephilim_1.0.0_x64-setup.exe -Algorithm SHA256",
                     )
                   }
                   className="num flex items-center gap-1.5 text-[11px] font-semibold text-[#a3be8c] hover:text-[#f0efeb]"
@@ -211,7 +211,7 @@ export function DownloadHub() {
             </div>
             <div className="mt-4 border border-[#222222] bg-[#0c0c0c] px-3.5 py-2.5">
               <code className="num block text-[11.5px] text-[#a3be8c] overflow-x-auto">
-                PS C:\Downloads&gt; Get-FileHash .\AirCut_1.0.0_x64-setup.exe -Algorithm SHA256
+                PS C:\Downloads&gt; Get-FileHash .\Nephilim_1.0.0_x64-setup.exe -Algorithm SHA256
               </code>
             </div>
           </div>

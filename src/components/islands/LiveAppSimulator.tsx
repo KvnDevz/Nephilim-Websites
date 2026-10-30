@@ -574,13 +574,13 @@ export function LiveAppSimulator() {
           <div className="mt-8 pt-6 border-t border-[#222222]">
             <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3">
               <a
-                href="/downloads/AirCut_1.0.0_x64-setup.exe"
-                download="AirCut_1.0.0_x64-setup.exe"
+                href="/downloads/Nephilim_1.0.0_x64-setup.exe"
+                download="Nephilim_1.0.0_x64-setup.exe"
                 className="flex h-12 items-center justify-between sm:justify-center gap-3 bg-[#a3be8c] px-4 sm:px-6 text-[13px] sm:text-[13.5px] font-bold text-[#0c0c0c] transition-colors hover:bg-[#b5cea0]"
               >
                 <div className="flex items-center gap-2 min-w-0">
                   <Download size={16} className="stroke-[2.4] shrink-0" />
-                  <span className="truncate">AirCut_1.0.0_x64-setup.exe</span>
+                  <span className="truncate">Nephilim_1.0.0_x64-setup.exe</span>
                 </div>
                 <span className="num shrink-0 border-l border-[#0c0c0c]/25 pl-2.5 text-[11.5px] font-semibold">
                   1.92 MB
@@ -588,8 +588,8 @@ export function LiveAppSimulator() {
               </a>
 
               <a
-                href="/downloads/AirCut_1.0.0_portable.exe"
-                download="AirCut_1.0.0_portable.exe"
+                href="/downloads/Nephilim_1.0.0_portable.exe"
+                download="Nephilim_1.0.0_portable.exe"
                 className="flex h-12 items-center justify-between sm:justify-center gap-3 border border-[#2a2a2a] bg-[#181818] px-4 sm:px-5 text-[13px] font-semibold text-[#f0efeb] transition-colors hover:border-[#3a3a3a] hover:bg-[#222222]"
               >
                 <div className="flex items-center gap-2">
@@ -794,7 +794,7 @@ export function LiveAppSimulator() {
                 <rect x="9.5" y="10.5" width="5" height="3" fill="#a3be8c" />
                 <path d="M8 1.5v13" stroke="#e06c75" strokeWidth="1.6" />
               </svg>
-              <span className="font-bold text-[#f0efeb]">AirCut Interactive Workbench</span>
+              <span className="font-bold text-[#f0efeb]">Nephilim Interactive Workbench</span>
             </div>
 
             <span className="hidden md:inline text-[#6e6c68]">|</span>
